@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IS-Bench</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="IS-Bench">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IS-Bench: Evaluating Interactive Safety of VLM-Driven Embodied Agents in Daily Household Tasks</title>
+
+  <link rel="icon" href="./static/images/logo.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+  <script src="./data/results/data_setting.js" defer></script>
+  <script src="./data/results/model_scores.js" defer></script>
+  <script src="./visualizer/data/data_public.js" defer></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title is-bold">
+            IS-Bench: Evaluating Interactive Safety of VLM-Driven Embodied Agents in Daily Household Tasks
+          </h1>
+          <div class="is-size-5 publication-authors mb-2">
+            <span class="author-block">
+              <a href="" style="text-decoration: none; color: inherit;">Xiaoya Lu*<sup style="color:#ed4b82;">1,2</sup></a>
+              ,
+            </span>
+            <span class="author-block">
+              <a href="" style="text-decoration: none; color: inherit;">Zeren Chen*<sup style="color:#ed4b82;">3,1</sup></a>
+              ,
+            </span>
+            <span class="author-block">
+              <a href="" style="text-decoration: none; color: inherit;">Xuhao Hu*<sup style="color:#ed4b82;">4,1</sup></a>
+              ,
+            </span>
+            <span class="author-block">
+              <a href="" style="text-decoration: none; color: inherit;">Yijing Zhou<sup style="color:#ed4b82;">2,5</sup></a>
+              ,
+            </span>
+            <span class="author-block">
+              <a href="" style="text-decoration: none; color: inherit;">Weichen Zhang<sup style="color:#ed4b82;">6</sup></a>
+              ,
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="" style="text-decoration: none; color: inherit;">Dongrui Liu†<sup style="color:#ed4b82;">1</sup></a>
+              ,
+            </span>
+            <span class="author-block">
+              <a href="" style="text-decoration: none; color: inherit;">Lu Sheng†<sup style="color:#ed4b82;">3</sup></a>
+              ,
+            </span>
+            <span class="author-block">
+              <a href="https://amandajshao.github.io" style="text-decoration: none; color: inherit;">Jing Shao†<sup style="color:#ed4b82;">1</sup></a>
+              ,
+            </span>
+          </div>
+          
+          <div class="is-size-5 publication-authors mb-1">
+            <!-- <span class="author-block"><sup style="color:#6fbf73;">1</sup>IN.AI Research,</span> -->
+            <span class="author-block"><sup style="color:#ed4b82;">1</sup>Shanghai AI Laboratory, </span>
+            <span class="author-block"><sup style="color:#ed4b82;">2</sup>Shanghai Jiao Tong University, </span>
+            <br>
+            <span class="author-block"><sup style="color:#ed4b82;">3</sup>Beihang University</span>
+            <span class="author-block"><sup style="color:#ed4b82;">4</sup>Fudan University</span>
+            <br>
+            <span class="author-block"><sup style="color:#ed4b82;">5</sup>Shanghai Innovation Institute</span>
+            <span class="author-block"><sup style="color:#ed4b82;">6</sup>Tongji University</span>
+          </div>
+
+          <div class="is-size-5 publication-authors mb-1">
+            <span class="author-block">*Equally Contribution</span> 
+            <span class="author-block">†Corresponding Author</span>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block mx-2">
+                <a href="https://www.arxiv.org/abs/2506.16402"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block mx-2">
+                <a href="https://huggingface.co/datasets/Ursulalala/IS-Bench"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+              <span class="link-block mx-2">
+                <a href="https://github.com/AI45Lab/IS-Bench"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+</style>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/7Vbtav0xcDo?si=bQ3oUdJ4Wwq8OrKF" 
+          width="100%" 
+          height="100%" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+          title="Embedded YouTube Video">
+        </iframe>
+      </div>
+      <p class="px-5 mb-5"> 
+        <b>Evaluation of Embodied Agents' Interactive Safety.</b> 
+        IS-Bench employs (a) interactive evaluation scenarios that can simulate dynamic risks during interaction and (b) process-oriented evaluation approaches that provide accurate and rigorous analysis. 
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p class="px-5">
+            Flawed planning from VLM-driven embodied agents poses significant safety hazards, hindering their deployment in real-world household tasks.
+            However, existing static, non-interactive evaluation paradigms fail to adequately assess risks within these interactive environments, since they cannot simulate dynamic risks that emerge from an agent's actions and rely on unreliable post-hoc evaluations that ignore unsafe intermediate steps. 
+            To bridge this critical gap, we propose evaluating an agent's interactive safety: its ability to perceive emergent risks and execute mitigation steps in the correct procedural order.
+            We thus present IS-Bench, the first multi-modal benchmark designed for interactive safety, featuring 161 challenging scenarios with 388 unique safety risks instantiated in a high-fidelity simulator. 
+            Crucially, it facilitates a novel process-oriented evaluation that verifies whether risk mitigation actions are performed before/after specific risk-prone steps.
+            Extensive experiments on leading VLMs, including the GPT-4o and Gemini-2.5 series, reveal that current agents lack interactive safety awareness, and that while safety-aware Chain-of-Thought can improve performance, it often compromises task completion.
+            By highlighting these critical limitations, IS-Bench provides a foundation for developing safer and more reliable embodied AI systems.
+          </p>
+        </div>
+      </div>      
+    </div>
+  </div>
+</section>
+
+
+<!-- DATASET SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mmmu">
+    <span class="mmmu" style="vertical-align: middle">IS-Bench</span>
+  </h1>
+  </div>
+</section>
+            
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/category_paper.png" alt="dataset_statistics" width="100%" class="center mb-4"/>
+          <p>
+            We introduce IS-Bench to comprehensively evaluate an agent's interactive safety, especially its ability to handle complex safety hazards, such as dynamic risks, through a process-oriented evaluation manner.
+            Our IS-Bench encompasses 161 interactive evaluation scenarios with 388 unique safety risks spanning 10 domestic safety categories, as shown above.
+            From the perspective of evaluation timing, these safety risks can be categorized as either pre-caution or post-caution, which account for 24.2% and 75.8%, respectively.
+            To support the planning and execution of safety-aware tasks, we design 18 distinct skill primitives and implement them in the Omnigibson simulator.
+          </p>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Data Construction</h2>
+        <div class="content has-text-justified mb-5">
+            <img src="static/images/pipeline.png" alt="pipeline" width="95%" class="center mb-4" />
+            <p>
+                We begin by prompting GPT-4o to extract safety principles that the agent must adhere to in the household scenes from Behavior-1K dataset.
+                Guided by these principles, we integrate corresponding safety risks, especially the dynamic risks emergent from an agent's actions, into the Behavior-1K household tasks by detecting existing hazards and strategically introducing new, risk-inducing objects.
+                Then, we generate the safety goal conditions for each tasks. Each goal includes a natural language description and a corresponding predicate based on the Planning Domain Definition Language (PDDL).
+                We finally instantiate each task within the OmniGibson simulator to ensure that each risk-aware task is reproducible. 
+            </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Evaluation Framework</h2>
+        <div class="content has-text-justified">
+            <img src="static/images/evaluation.png" alt="pipeline" width="100%" class="center mb-4" />
+            <p>
+               We measures agent's ability to complete a task while respecting all safety constraints within the interactive OmniGibson simulator. 
+               For each plan executed by an agent, our framework checks whether every annotated safety goal condition is satisfied according to its trigger.
+               As a complementary analysis, we also evaluate the agent's explicit safety awareness. In this setup, the agent is provided with the task instruction and initial visual context and prompted to describe the potential safety issues it needs to consider before planning.
+            </p>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mmmu">Experimental Results</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered ">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="leaderboard">Benchmark Results</h2>
+          <div class="content has-text-justified is-centered">
+            <img src="static/images/leaderbord_paper.png" alt="pipeline" width="55%" class="center mb-4" />
+              <p> 
+                We assess the interactive safety of various VLM-driven agents, including open-source models like Qwen2.5-VL and InternVL2, alongside proprietary models such as GPT-4o and Gemini-2.5-series.
+                We prompt VLM-driven agents to perform task planning under following settings: L1: implicit safety reminder, L2: safety CoT reminder.
+                <br>
+                <br>
+                We summarize several key observations: 
+                <b>1.</b> Current Embodied Agents Lack Interactive Safety Capability. 
+                <b>2.</b> Safety-Aware CoT Improves Interactive Safety but Compromises Task Completion. 
+                <b>3.</b> The suboptimal performance in the L1 and L2 settings stems directly from a poor ability to proactively perceive and identify risks in a dynamic environment.
+              </p>
+            <br>
+            <img src="static/images/results_figure.png" alt="pipeline" class="center mb-4" width="100%"/>
+            <p> 
+              To investigate how multi-modal context, especially the visual inputs, influences interactive safety, we conduct an ablation study analyzing different auxiliary inputs: bounding boxes for manipulable objects (BBox), self-generated scene captions (Caption), and ground-truth descriptions of the initial scene setup (IS), which describes the layout of objects in the initial scene.
+            </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- @PAN TODO: bibtex -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre><code>@article{lu2025bench,
+        title={IS-Bench: Evaluating Interactive Safety of VLM-Driven Embodied Agents in Daily Household Tasks},
+        author={Lu, Xiaoya and Chen, Zeren and Hu, Xuhao and Zhou, Yijin and Zhang, Weichen and Liu, Dongrui and Sheng, Lu and Shao, Jing},
+        journal={arXiv preprint arXiv:2506.16402},
+        year={2025}
+    }</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
+                                              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+          Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+</script>
+
+<style>
+  .hidden {
+      display: none;
+  }
+  .sortable:hover {
+      cursor: pointer;
+  }
+  .asc::after {
+      content: ' ↑';
+  }
+  .desc::after {
+      content: ' ↓';
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+
+  th, td {
+      text-align: left;
+      padding: 8px;
+  }
+
+  th {
+      background-color: #f2f2f2;
+      border-bottom: 2px solid #ddd;
+  }
+
+  td:hover {background-color: #ffffff;}
+</style>
+
+</body>
+</html>
